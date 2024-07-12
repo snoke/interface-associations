@@ -29,8 +29,5 @@ class Configuration implements ConfigurationInterface
 
         return $treeBuilder;
 
-        return $treeBuilder;
-
-        return $treeBuilder;
     }
 }

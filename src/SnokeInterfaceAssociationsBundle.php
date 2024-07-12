@@ -10,7 +10,6 @@ use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 class SnokeInterfaceAssociationsBundle extends Bundle
 {
-
     public function getPath(): string
     {
         return \dirname(__DIR__);
@@ -26,7 +25,8 @@ class SnokeInterfaceAssociationsBundle extends Bundle
     public function build(ContainerBuilder $container): void
     {
         parent::build($container);
+
         $container->addCompilerPass(new ConfigurationPass());
-        $container->addCompilerPass(new UninstallPass(), PassConfig::TYPE_BEFORE_REMOVING);
+        //$container->addCompilerPass(new UninstallPass(),PassConfig::TYPE_AFTER_REMOVING);
     }
 }

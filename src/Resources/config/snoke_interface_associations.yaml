@@ -1,2 +1,6 @@
 snoke_interface_associations:
-  # - App\Interface\UserInterface: App\Entity\User
+  remap:
+#    - source: 'Snoke\OAuthServer\Interface\AuthenticatableInterface'
+#      target: 'App\Entity\User'
+#      class: 'Snoke\OAuthServer\Entity\AccessToken'
+#      property: 'user'

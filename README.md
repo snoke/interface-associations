@@ -9,7 +9,9 @@ run ```composer req snoke/interface-associations```
 
 The bundle allows configuring remappings. You can specify which classes or interfaces should be replaced by other classes or interfaces, either globally or specifically for certain classes and properties.
 
-Example Configuration:
+## configuration
+
+edit ```config/packages/snoke_interface_associations.yaml``` as follows:
 ```yaml
 snoke_interface_associations:
     remap:

@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-class InterfaceAssociations extends Bundle
+class SnokeInterfaceAssociationsBundle extends Bundle
 {
 
     public function getPath(): string

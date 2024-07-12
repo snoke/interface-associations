@@ -9,9 +9,8 @@ use Doctrine\ORM\Events;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping\AssociationMapping;
 use phpDocumentor\Reflection\Types\ClassString;
-use Snoke\OAuthServer\Interface\AuthenticatableInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
-
+use Snoke\OAuthServer\Interface\AuthenticatableInterface;
 #[AsDoctrineListener(event: Events::loadClassMetadata, priority: 500, connection: 'default')]
 class LoadClassMetadataListener
 {
@@ -23,13 +22,21 @@ class LoadClassMetadataListener
 
     public function loadClassMetadata(LoadClassMetadataEventArgs $args): void
     {
-        die("HIIIIIIII");
         $metadata = $args->getClassMetadata();
-
         foreach ($metadata->associationMappings as $field => $mapping) {
+            $mappings = array_filter($this->parameters['remap'], function ($newMapping) use ($mapping,$metadata) {
+                return ($newMapping['class'] === $metadata->name || $newMapping['class'] === null) && ($newMapping['field'] === $mapping['fieldName'] || $newMapping['field'] === null);
+            });
+            if (count($mappings) !== 0) {
+                foreach($mappings as $mapping) {
+                    $this->remapAssociation($metadata, $metadata->associationMappings[$field],$mapping['target']);
+                }
+            }
+            /*
             if($mapping['targetEntity'] == AuthenticatableInterface::class) {
                 $this->remapAssociation($metadata, $metadata->associationMappings[$field],$this->parameters['authenticatable']);
             }
+            */
         }
     }
 

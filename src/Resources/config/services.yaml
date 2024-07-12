@@ -7,3 +7,5 @@ services:
     autowire: true
     autoconfigure: true
     resource: '../../'
+
+  Snoke\InterfaceAssociations\EventListener\LoadClassMetadataListener:

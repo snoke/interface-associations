@@ -9,13 +9,11 @@ class UninstallPass implements CompilerPassInterface
 
     public function process(ContainerBuilder $container)
     {
-        /*
-        $configFile = $container->getParameter('kernel.project_dir') . '/config/packages/snoke_o_auth.yaml';
+        $configFile = $container->getParameter('kernel.project_dir') . '/config/packages/snoke_interface_associations.yaml';
 
         if (file_exists($configFile)) {
             unlink($configFile);
         }
-        */
     }
 
 }

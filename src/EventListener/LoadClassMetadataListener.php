@@ -1,16 +1,13 @@
 <?php
 namespace Snoke\InterfaceAssociations\EventListener;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Doctrine\Bundle\DoctrineBundle\Attribute\AsDoctrineListener;
 use Doctrine\ORM\Events;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping\AssociationMapping;
-use phpDocumentor\Reflection\Types\ClassString;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
-use Snoke\OAuthServer\Interface\AuthenticatableInterface;
 #[AsDoctrineListener(event: Events::loadClassMetadata, priority: 500, connection: 'default')]
 class LoadClassMetadataListener
 {
@@ -32,11 +29,6 @@ class LoadClassMetadataListener
                     $this->remapAssociation($metadata, $metadata->associationMappings[$field],$mapping['target']);
                 }
             }
-            /*
-            if($mapping['targetEntity'] == AuthenticatableInterface::class) {
-                $this->remapAssociation($metadata, $metadata->associationMappings[$field],$this->parameters['authenticatable']);
-            }
-            */
         }
     }
 

@@ -2,10 +2,12 @@
 Bundle for Symfony7 with Doctrine ORM
 
 The Interface Associations Bundle provides a way to replace ORM relations with interfaces and map them to concrete classes only at runtime. This enables the development of abstract components.
+# installation
+run ```composer req snoke/interface-associations```
 
 ## Functionality
 
-The bundle allows configuring remappings via the file config/packages/snoke_interface_associations.yaml. Here, you can specify which classes or interfaces should be replaced by other classes or interfaces, either globally or specifically for certain classes and properties.
+The bundle allows configuring remappings. You can specify which classes or interfaces should be replaced by other classes or interfaces, either globally or specifically for certain classes and properties.
 
 Example Configuration:
 ```yaml

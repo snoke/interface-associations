@@ -19,8 +19,8 @@ class Configuration implements ConfigurationInterface
             ->children()
             ->scalarNode('source')->isRequired()->end()
             ->scalarNode('target')->isRequired()->end()
-            ->scalarNode('class')->defaultNull()->end()  // Optionale Klasse
-            ->scalarNode('field')->defaultNull()->end()  // Optionale Eigenschaft
+            ->scalarNode('class')->defaultNull()->end()
+            ->scalarNode('field')->defaultNull()->end()
             ->end()
             ->end()
             ->end()

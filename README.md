@@ -32,7 +32,7 @@ snoke_interface_associations:
 
 - property (optional): The property within the class where the remapping should be applied. If not specified, the remapping applies to all properties of the class.
 
-this way you can produce code having interface as relationships
+this way you can produce code having interfaces as relationships
 ```php
     #[ORM\ManyToOne(inversedBy: 'accessTokens')]
     private EntityInterface $user;

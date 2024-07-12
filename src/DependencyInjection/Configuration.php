@@ -10,11 +10,8 @@ class Configuration implements ConfigurationInterface
     {
 
         $treeBuilder = new TreeBuilder('snoke_interface_associations');
-
         $rootNode = $treeBuilder->getRootNode();
-        $treeBuilder = new TreeBuilder('snoke_interface_associations');
 
-        $rootNode = $treeBuilder->getRootNode();
         $rootNode
             ->children()
             ->arrayNode('remap')

@@ -15,6 +15,7 @@ class LoadClassMetadataListener
     public function __construct(private readonly EntityManagerInterface $em, ParameterBagInterface $parameterBag)
     {
         $this->parameters = $parameterBag->get('snoke_interface_associations');
+
     }
 
     public function loadClassMetadata(LoadClassMetadataEventArgs $args): void

@@ -10,6 +10,17 @@ use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 class SnokeInterfaceAssociationsBundle extends Bundle
 {
+    private function createPackageFile($container): void
+    {
+        $configFile = $container->getParameter('kernel.project_dir') . '/config/packages/snoke_interface_associations.yaml';
+
+        $bundleConfigFile = __DIR__ . '/../../Resources/config/snoke_interface_associations.yaml';
+
+        if (!file_exists($configFile)) {
+            $defaultConfig = file_get_contents($bundleConfigFile);
+            file_put_contents($configFile, $defaultConfig);
+        }
+    }
     public function getPath(): string
     {
         return \dirname(__DIR__);
@@ -24,9 +35,8 @@ class SnokeInterfaceAssociationsBundle extends Bundle
     }
     public function build(ContainerBuilder $container): void
     {
+        $this->createPackageFile($container);
         parent::build($container);
 
-        $container->addCompilerPass(new ConfigurationPass());
-        //$container->addCompilerPass(new UninstallPass(),PassConfig::TYPE_AFTER_REMOVING);
     }
 }

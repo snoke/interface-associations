@@ -13,8 +13,8 @@ class SnokeInterfaceAssociationsExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
         $container->setParameter('snoke_interface_associations', $config);
+        $container->setParameter('snoke_interface_associations.remap', $config['remap']);
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yaml');
-        $container->setParameter('snoke_interface_associations.remap', $config['remap']);
     }
 }

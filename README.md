@@ -18,7 +18,7 @@ snoke_interface_associations:
         - source: 'App\Interface\EntityInterface'
           target: 'App\Entity\User'
           class: 'App\Entity\AuthToken'
-          property: 'user'
+          field: 'user'
 ```
 
 - source: The source class or interface to be remapped.

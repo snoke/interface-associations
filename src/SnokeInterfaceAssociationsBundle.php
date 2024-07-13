@@ -14,7 +14,7 @@ class SnokeInterfaceAssociationsBundle extends Bundle
     {
         $configFile = $container->getParameter('kernel.project_dir') . '/config/packages/snoke_interface_associations.yaml';
 
-        $bundleConfigFile = __DIR__ . '/../../Resources/config/snoke_interface_associations.yaml';
+        $bundleConfigFile = __DIR__ . '/Resources/config/snoke_interface_associations.yaml';
 
         if (!file_exists($configFile)) {
             $defaultConfig = file_get_contents($bundleConfigFile);

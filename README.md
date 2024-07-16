@@ -1,7 +1,7 @@
 # Interface Associations
 Bundle for Symfony7 with Doctrine ORM
 
-The Interface Associations Bundle provides a way to replace ORM relations with interfaces and map them to concrete classes only at runtime. This enables the development of abstract components.
+The Interface Associations Bundle provides a way to replace ORM relations with interfaces and map them to concrete classes at runtime. This enables the development of abstract components.
 # installation
 run ```composer req snoke/interface-associations```
 
